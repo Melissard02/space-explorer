@@ -16,7 +16,30 @@ async function loadAPOD() {
     };
 }
 
-function loadMarsPhotos() {
+async function loadMarsPhotos() {
+
+    const container = document.getElementById("mars-container");
+
+    const response = await fetch(
+        `https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/photos?sol=100&api_key=${API_KEY}`
+    );
+
+    const data = await response.json();
+
+    container.innerHTML = "";
+
+    data.photos.slice(0, 6).forEach(photo => {
+
+        const card = document.createElement("div");
+
+        card.innerHTML = `
+            <img src="${photo.img_src}" style="width:300px">
+            <p>${photo.camera.full_name}</p>
+        `;
+
+        container.appendChild(card);
+
+    });
 
 }
 
@@ -24,4 +47,9 @@ function searchNASA() {
 
 }
 
-window.onload = loadAPOD;
+function init() {
+    loadAPOD();
+    loadMarsPhotos();
+}
+
+window.onload = init;
