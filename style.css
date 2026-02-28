@@ -1,0 +1,125 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b0f1a;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #020024, #090979, #00d4ff);
+    padding: 1rem 2rem;
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+}
+
+nav {
+    margin-top: 0.5rem;
+}
+
+nav a {
+    color: white;
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #00d4ff;
+}
+
+/* Layout */
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+/* Cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    background-color: #111827;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 300px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Buttons */
+button {
+    margin-top: 1rem;
+    background-color: #2563eb;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Inputs */
+input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    margin-right: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: #020617;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* HERO SECTION */
+#hero {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* dark overlay */
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    max-width: 700px;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
