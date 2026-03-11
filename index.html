@@ -28,7 +28,8 @@
     <div class="hero-content">
         <h1 id="apod-title">Loading...</h1>
         <p id="apod-description"></p>
-        <button onclick="loadAPOD()">Refresh</button>
+        <!-- <button onclick="loadAPOD()">Refresh</button> -->
+         <button onclick="">View Picture of the Day</button>
     </div>
 </header>
 
@@ -41,6 +42,7 @@
         <div id="mars-container" class="card-container">
             <!-- Mars photos inserted here -->
         </div>
+        <p>Known Issue: Currently Working on Fixing</p>
 
         <button onclick="loadMarsPhotos()">Load Mars Photos</button>
     </section>
@@ -57,6 +59,16 @@
         </div>
     </section>
 
+    <!-- OBJECTS NEAR EARTH SECTION -->
+    <section id="near-earth">
+        <h2>Objects Near Earth</h2>
+
+        <div id="aster-container" class="card-container">
+            <!-- Asteroids stuff inserted here -->
+        </div>
+
+        <button onclick="loadNearEarth()">Load Asteroids</button>
+    </section>
 </main>
 
 <footer>
