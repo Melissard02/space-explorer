@@ -28,8 +28,7 @@
     <div class="hero-content">
         <h1 id="apod-title">Loading...</h1>
         <p id="apod-description"></p>
-        <!-- <button onclick="loadAPOD()">Refresh</button> -->
-         <button onclick="">View Picture of the Day</button>
+         <a href="https://apod.nasa.gov/apod/"><button>View Picture of the Day</button></a>
     </div>
 </header>
 
@@ -39,12 +38,14 @@
     <section id="mars">
         <h2>Mars Rover Photos</h2>
 
-        <div id="mars-container" class="card-container">
-            <!-- Mars photos inserted here -->
-        </div>
-        <p>Known Issue: Currently Working on Fixing</p>
+        <button class="carousel-btn prev" id="prev-btn">&#10094;</button>
 
-        <button onclick="loadMarsPhotos()">Load Mars Photos</button>
+        <div class="carousel-track-container">
+            <div id="mars-container" class="carousel-track"></div>
+        </div>
+
+        <button class="carousel-btn next" id="next-btn">&#10095;</button>
+
     </section>
 
 
