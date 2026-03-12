@@ -33,42 +33,22 @@
 </header>
 
 <main>
-
     <!-- Mars Rover Section -->
     <section id="mars">
         <h2>Mars Rover Photos</h2>
-
-        <button class="carousel-btn prev" id="prev-btn">&#10094;</button>
-
         <div class="carousel-track-container">
             <div id="mars-container" class="carousel-track"></div>
         </div>
+    <button id="prev-btn">&#10094;</button>
+        <button id="next-btn">&#10095;</button>
 
-        <button class="carousel-btn next" id="next-btn">&#10095;</button>
-
-    </section>
-
-
-    <!-- NASA Search Section -->
-    <section id="search">
-        <h2>Search NASA Images</h2>
-
-        <input type="text" id="search-input" placeholder="Search for galaxies, planets, etc">
-        <button onclick="searchNASA()">Search</button>
-
-        <div id="search-results" class="card-container">
-        </div>
     </section>
 
     <!-- OBJECTS NEAR EARTH SECTION -->
     <section id="near-earth">
-        <h2>Objects Near Earth</h2>
-
-        <div id="aster-container" class="card-container">
+        <div id="asteroid-container" class="card-container">
             <!-- Asteroids stuff inserted here -->
         </div>
-
-        <button onclick="loadNearEarth()">Load Asteroids</button>
     </section>
 </main>
 
