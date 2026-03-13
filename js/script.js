@@ -1,5 +1,5 @@
 // script.js
-import { loadAPOD } from "./apod.js";
+import { loadAPOD } from "./apodHero.js";
 import { loadMarsPhotos } from "./mars.js";
 import { loadNearEarth } from "./asteroid.js";
 

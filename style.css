@@ -333,3 +333,30 @@ footer {
     }
 
 }
+
+
+/* ============================= */
+/* SUBPAGE HERO */
+/* ============================= */
+
+body.subpage #hero {
+    height: 170px;
+    background-image: url("images/backuphero.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Hide APOD hero content on subpages */
+
+body.subpage #hero-media,
+body.subpage .hero-content {
+    display: none;
+}
+
+/* Keep navigation visible */
+
+body.subpage .top-bar {
+    position: relative;
+    z-index: 2;
+    padding-top: 1.5rem;
+}
