@@ -12,7 +12,7 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="subpage">
 
 <header id="hero">
     <div class="top-bar">
@@ -25,15 +25,46 @@
     </div>
     
     <div id="hero-media"></div>
-    <div class="hero-content">
-        <h1 id="apod-title">Loading...</h1>
-        <p id="apod-description"></p>
-         <a href="https://apod.nasa.gov/apod/"><button>View Picture of the Day</button></a>
-    </div>
+    
 </header>
 
 <main>
+    <section id="random-apod-section">
+        <h2>Random Space Discoveries</h2>
+        <div id="random-apod" class="card-container"></div>
+    </section>
 
+    <section id="apod-single-date">
+        <h2>Search APOD by Date</h2>
+
+        <input type="date" id="apod-date">
+        <button onclick="loadAPODByDate()">Search</button>
+
+        <div id="date-apod"></div>
+    </section>
+
+    <section id="apod-range-section">
+
+    <h2>Explore APOD by Date Range</h2>
+    <p>Select a start and end date to explore past Astronomy Pictures of the Day.</p>
+
+    <div class="range-form">
+
+        <label for="start-date">Start Date</label>
+        <input type="date" id="start-date">
+
+        <label for="end-date">End Date</label>
+        <input type="date" id="end-date">
+
+        <button id="range-btn">Load APODs</button>
+
+    </div>
+
+    <div id="apod-range" class="card-container">
+        <!-- APOD cards will appear here -->
+    </div>
+
+    </section>
 </main>
 
 <footer>

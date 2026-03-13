@@ -1,52 +1,78 @@
 // apod.js
-// ==============================
-// Astronomy Picture of the Day
-// ==============================
-export async function loadAPOD(API_KEY) {
-    try {
 
-        const response = await fetch(
-            `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`
-        );
+export async function loadRandomAPOD(API_KEY) {
 
-        const data = await response.json();
-        console.log(data.url);
-        console.log(data.media_type);
+    const container = document.getElementById("random-apod");
 
-        const heroMedia = document.getElementById("hero-media");
-        heroMedia.innerHTML = "";
+    const response = await fetch(
+        `https://api.nasa.gov/planetary/apod?count=6&api_key=${API_KEY}`
+    );
 
-        if (data.media_type === "image") {
+    const data = await response.json();
 
-            heroMedia.innerHTML = `
-                <img src="${data.url}" alt="${data.title}">
-            `;
+    container.innerHTML = "";
 
-        } else if (data.media_type === "video") {
+    data.forEach(item => {
 
-            heroMedia.innerHTML = `
-                <video autoplay muted loop playsinline>
-                    <source src="${data.url}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            `;
+        const card = document.createElement("div");
+        card.className = "card";
 
-        }
+        card.innerHTML = `
+            <img src="${item.url}" alt="${item.title}">
+            <h3>${item.title}</h3>
+        `;
 
-        document.getElementById("apod-title").textContent = data.title;
-        document.getElementById("apod-description").textContent =
-            data.explanation.slice(0, 250) + "...";
+        container.appendChild(card);
 
-    } catch (error) {
-        console.error("Error loading APOD", error);
-        const heroMedia = document.getElementById("hero-media");
+    });
 
-    heroMedia.innerHTML = `
-        <img src="images/backuphero.jpg" alt="Fallback space image">
+}
+
+export async function loadAPODByDate(API_KEY) {
+
+    const date = document.getElementById("apod-date").value;
+
+    const response = await fetch(
+        `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${API_KEY}`
+    );
+
+    const data = await response.json();
+
+    const container = document.getElementById("date-apod");
+
+    container.innerHTML = `
+        <img src="${data.url}">
+        <h3>${data.title}</h3>
+        <p>${data.explanation}</p>
     `;
+}
 
-    document.getElementById("apod-title").textContent = "Space Explorer";
-    document.getElementById("apod-description").textContent =
-        "Unable to load NASA Astronomy Picture of the Day.";
-    }
+export async function loadAPODRange(API_KEY, start, end) {
+
+    const container = document.getElementById("apod-range");
+
+    const response = await fetch(
+        `https://api.nasa.gov/planetary/apod?start_date=${start}&end_date=${end}&api_key=${API_KEY}`
+    );
+
+    const data = await response.json();
+
+    container.innerHTML = "";
+
+    data.forEach(item => {
+
+        if(item.media_type !== "image") return;
+
+        const card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
+            <img src="${item.url}">
+            <p>${item.date}</p>
+        `;
+
+        container.appendChild(card);
+
+    });
+
 }
