@@ -360,3 +360,30 @@ body.subpage .top-bar {
     z-index: 2;
     padding-top: 1.5rem;
 }
+
+/* Homepage Feature Cards */
+
+#explore {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.feature-card {
+    background: #111827;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 280px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,212,255,0.25);
+}
