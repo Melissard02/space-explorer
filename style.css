@@ -52,6 +52,13 @@ nav a:hover {
     z-index: 3;
 }
 
+section h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
 /* HERO SECTION */
 #hero {
     height: 75vh;
@@ -112,7 +119,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    /* justify-content: center; */
+    justify-content: left;
 }
 
 .card {
@@ -121,6 +128,7 @@ section {
     padding: 1rem;
     flex: 1 1 300px;
     max-width: 300px;
+    text-decoration: none;
 }
 
 .card img {

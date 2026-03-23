@@ -1,0 +1,13 @@
+/* APOD search form + results */
+#apod-single-date {
+    padding: 2rem;
+    text-align: center;
+}
+
+#apod-single-date input {
+    margin-right: 0.5rem;
+}
+
+#date-apod {
+    margin-top: 2rem;
+}
