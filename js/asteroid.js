@@ -7,6 +7,10 @@ export async function loadNearEarth(API_KEY) {
     const rangeForm = document.createElement("div");
     rangeForm.id = "range-form";
 
+    const resultsContainer = document.createElement("div");
+    resultsContainer.id = "form-results";
+    resultsContainer.className = "card-container";
+
     rangeForm.innerHTML = `
     <h2>Search Near-Earth Objects by Date</h2>
     <p>Please Note that Smaller Ranges Work Best</p>
@@ -19,14 +23,13 @@ export async function loadNearEarth(API_KEY) {
         
         <button type="submit">Submit</button>  
     </form>
-
-    <div id="form-results" class="card-container"></div>
     `;
 
     nearSection.appendChild(rangeForm);
+    nearSection.appendChild(resultsContainer);
 
     const form = document.getElementById("asteroid-form");
-    const formResults = document.getElementById("form-results");
+    const formResults = resultsContainer;
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
