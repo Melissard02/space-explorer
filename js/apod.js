@@ -18,8 +18,10 @@ export async function loadRandomAPOD(API_KEY) {
         card.className = "card";
 
         card.innerHTML = `
+            <a href="${item.url}">
             <img src="${item.url}" alt="${item.title}">
             <h3>${item.title}</h3>
+            </a>
         `;
 
         container.appendChild(card);
