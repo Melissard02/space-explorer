@@ -59,6 +59,49 @@ section h2 {
     text-align: left;
 }
 
+/* THE MODAL BACKGROUND */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(1, 0, 16, 0.9);
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+/* Caption */
+#modal-caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  text-align: center;
+  color: #fff;
+  padding: 10px 0;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 /* HERO SECTION */
 #hero {
     height: 75vh;

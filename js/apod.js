@@ -1,37 +1,7 @@
 // apod.js
 
-export async function loadRandomAPOD(API_KEY) {
-
-    const container = document.getElementById("random-apod");
-
-    const response = await fetch(
-        `https://api.nasa.gov/planetary/apod?count=6&api_key=${API_KEY}`
-    );
-
-    const data = await response.json();
-
-    container.innerHTML = "";
-
-    data.forEach(item => {
-
-        const card = document.createElement("div");
-        card.className = "card";
-
-        card.innerHTML = `
-            <a href="${item.url}">
-            <img src="${item.url}" alt="${item.title}">
-            <h3>${item.title}</h3>
-            </a>
-        `;
-
-        container.appendChild(card);
-
-    });
-
-}
-
 export async function loadAPODByDate(API_KEY) {
-
+    
     const date = document.getElementById("apod-date").value;
 
     const response = await fetch(

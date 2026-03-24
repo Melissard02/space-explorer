@@ -35,10 +35,10 @@
 </header>
 
 <main>
-    <section id="featured-image">
+    <!-- <section id="featured-image">
         <h2>Featured Space Image</h2>
         <div id="featured-container" class="card-container"></div>
-    </section>
+    </section> -->
     
     <section id="explore">
         <h2>Explore the Universe</h2>
@@ -58,6 +58,11 @@
                 <p>Search for asteroids that have passed near Earth and learn about their size and risk level.</p>
             </a>
         </div>
+    </section>
+
+    <section id="random-apod-section">
+        <h2>Random Space Discoveries</h2>
+        <div id="random-apod" class="card-container"></div>
     </section>
 
     <section id="space-facts">
@@ -82,6 +87,13 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div id="apod-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="modal-caption"></div>
+    </div>
 </main>
 
 <footer>
