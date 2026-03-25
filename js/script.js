@@ -1,5 +1,6 @@
 // script.js
 import { loadAPOD } from "./apodHero.js";
+import { setupDropdownMenu } from "./dropdown.js";
 const API_KEY = import.meta.env.VITE_NASA_API_KEY;
 
 async function loadRandomAPOD(API_KEY, count = 8) {
@@ -57,6 +58,7 @@ async function randomFacts() {
 function init() {
     loadAPOD(API_KEY);
     loadRandomAPOD(API_KEY);
+    setupDropdownMenu();
 }
 
 window.onload = init;
