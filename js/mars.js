@@ -1,5 +1,24 @@
 // mars.js
 // ==============================
+// Mars Modal
+// ==============================
+export function setupModal() {
+    const modal = document.getElementById("mars-modal");
+    const closeBtn = document.getElementById("close-modal");
+
+    closeBtn.onclick = () => {
+        modal.style.display = "none";
+    };
+
+    // Optional: click outside to close
+    window.onclick = (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+}
+
+// ==============================
 // Load Mars Rover Photos
 // ==============================
 export async function loadMarsPhotos(API_KEY) {

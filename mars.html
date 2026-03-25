@@ -10,10 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/mars.css"> -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/mars.css">
 </head>
+<!-- Mars API Notice Modal -->
+<div id="mars-modal" class="modal">
+    <div class="modal-box">
+        <span id="close-modal">&times;</span>
+        <h2>Mars Rover API Update</h2>
+        <p>
+            The NASA Mars Rover API is no longer receiving updated photos.
+            The images shown here are a curated selection of previously captured Mars photos.
+        </p>
+    </div>
+</div>
 <body class="subpage">
 
 <header id="hero">
@@ -35,7 +45,7 @@
 </header>
 
 <main>
-    <!-- Mars Rover Section -->
+    <!-- Mars Rover Photos -->
     <section id="mars">
         <h2>Mars Rover Photos</h2>
         <div class="carousel-track-container">
@@ -43,8 +53,40 @@
         </div>
     <button id="prev-btn">&#10094;</button>
         <button id="next-btn">&#10095;</button>
-
     </section>
+
+    <section id="rovers">
+    <h2>Explore Mars Rovers</h2>
+
+    <div class="rover-container">
+
+        <!-- Perseverance -->
+        <div class="rover-card">
+            <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/psd/mars/news_items/main_images/9130_PIA24836-web.jpg?w=1600&h=900&fit=clip&crop=faces%2Cfocalpoint" alt="Mars Perseverance Rover">
+
+            <h3>Perseverance</h3>
+
+            <div class="rover-links">
+                <a href="https://science.nasa.gov/mission/mars-2020-perseverance/" target="_blank">Mission Overview</a>
+                <a href="https://mars.nasa.gov/mars2020/multimedia/raw-images/" target="_blank">Raw Images</a>
+                <a href="https://mars.nasa.gov/mars2020/multimedia/raw-images/image-of-the-week/">Image of the Week</a>
+            </div>
+        </div>
+
+        <!-- Curiosity -->
+        <div class="rover-card">
+            <img src="https://www.nasa.gov/wp-content/uploads/2019/10/pia23378-16.jpg?w=1400" alt="Mars Curiosity Rover">
+
+            <h3>Curiosity</h3>
+
+            <div class="rover-links">
+                <a href="https://science.nasa.gov/mission/msl-curiosity/" target="_blank">Mission Overview</a>
+                <a href="https://mars.nasa.gov/msl/multimedia/raw-images/" target="_blank">Raw Images</a>
+            </div>
+        </div>
+
+    </div>
+</section>
 
 </main>
 
