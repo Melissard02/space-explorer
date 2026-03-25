@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/apod.css"> -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/apod.css">
 </head>
 <body class="subpage">
 
@@ -35,33 +35,34 @@
     <section id="apod-single-date">
         <h2>Search APOD by Date</h2>
 
-        <input type="date" id="apod-date">
-        <button onclick="loadAPODByDate()">Search</button>
+        <form id="single-date-form">
+            <input type="date" id="apod-date">
+            <button type="submit">Search</button>
+        </form>
+       
 
         <div id="date-apod"></div>
     </section>
 
     <section id="apod-range-section">
+        <h2>Explore APOD by Date Range</h2>
+        <p>Select a start and end date to explore past Astronomy Pictures of the Day.</p>
 
-    <h2>Explore APOD by Date Range</h2>
-    <p>Select a start and end date to explore past Astronomy Pictures of the Day.</p>
+        <form class="range-form" id="range-form">
 
-    <div class="range-form">
+            <label for="start-date">Start Date</label>
+            <input type="date" id="start-date">
 
-        <label for="start-date">Start Date</label>
-        <input type="date" id="start-date">
+            <label for="end-date">End Date</label>
+            <input type="date" id="end-date">
 
-        <label for="end-date">End Date</label>
-        <input type="date" id="end-date">
+            <button id="range-btn">Load APODs</button>
 
-        <button id="range-btn">Load APODs</button>
+        </form>
 
-    </div>
-
-    <div id="apod-range" class="card-container">
-        <!-- APOD cards will appear here -->
-    </div>
-
+        <div id="apod-range" class="card-container">
+            <!-- APOD cards will appear here -->
+        </div>
     </section>
 </main>
 

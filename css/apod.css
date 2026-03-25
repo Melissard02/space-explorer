@@ -1,13 +1,149 @@
-/* APOD search form + results */
+/* ============================= */
+/* APOD PAGE LAYOUT */
+/* ============================= */
+
 #apod-single-date {
-    padding: 2rem;
     text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-#apod-single-date input {
+/* ============================= */
+/* SINGLE DATE FORM */
+/* ============================= */
+
+#single-date-form {
+    margin-top: 1rem;
+}
+
+#single-date-form input {
     margin-right: 0.5rem;
 }
 
+/* ============================= */
+/* DATE RESULT (MAIN APOD) */
+/* ============================= */
+
 #date-apod {
     margin-top: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.apod-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+#date-apod h3 {
+    margin-top: 1rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#date-apod p {
+    margin-top: 0.5rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* ============================= */
+/* RANGE SECTION */
+/* ============================= */
+
+#apod-range-section {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#apod-range-section p {
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+/* ============================= */
+/* RANGE FORM */
+/* ============================= */
+
+.range-form {
+    background: #111827;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 500px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+}
+
+.range-form label {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+.range-form input {
+    width: 80%;
+    padding: 0.6rem;
+    border-radius: 6px;
+    border: none;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.range-form button {
+    background: #00d4ff;
+    color: black;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.range-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,212,255,0.4);
+}
+
+/* ============================= */
+/* APOD RANGE CARDS */
+/* ============================= */
+
+#apod-range {
+    justify-content: center;
+}
+
+#apod-range .card img {
+    transition: transform 0.2s ease;
+}
+
+#apod-range .card:hover img {
+    transform: scale(1.05);
+}
+
+#apod-range .card h4 {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 700px) {
+
+    #apod-single-date,
+    #apod-range-section {
+        padding: 1rem;
+    }
+
+    .range-form {
+        width: 90%;
+    }
+
 }
