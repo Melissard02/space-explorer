@@ -53,12 +53,27 @@ async function randomFacts() {
     
 }
 
+async function animateDoodle() {
+    const doodle = document.getElementById("doodle");
+
+    doodle.addEventListener("click", () => {
+    // Remove class if already there to re-trigger
+    doodle.classList.remove("animate-doodle");
+    
+    // Trigger reflow to restart animation
+    void doodle.offsetWidth;
+    
+    doodle.classList.add("animate-doodle");
+});
+}
+
 
 
 function init() {
     loadAPOD(API_KEY);
     loadRandomAPOD(API_KEY);
     setupDropdownMenu();
+    animateDoodle();
 }
 
 window.onload = init;

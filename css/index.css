@@ -167,6 +167,38 @@
 }
 
 /* ============================= */
+/* DOODLE ANIMATION */
+/* ============================= */
+.doodle-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    margin-bottom: 100px;
+    z-index: 1000;
+}
+
+.clickable-doodle {
+  width: 150px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+/* Click animation keyframes */
+@keyframes spinBounce {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(90deg) scale(1.2); }
+  50% { transform: rotate(180deg) scale(0.9); }
+  75% { transform: rotate(270deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Apply animation when JS adds class */
+.animate-doodle {
+  animation: spinBounce 0.8s ease-out forwards;
+}
+
+/* ============================= */
 /* RESPONSIVE */
 /* ============================= */
 
