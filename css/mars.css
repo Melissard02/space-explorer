@@ -73,13 +73,17 @@
 /* ============================= */
 
 .modal {
-    display: flex; /* show on load */
+    display: flex; /* let js load it */
     position: fixed;
     z-index: 999;
     inset: 0;
     background: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
+    /* hidden initially via js */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .modal-box {

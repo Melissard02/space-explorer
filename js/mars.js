@@ -6,14 +6,25 @@ export function setupModal() {
     const modal = document.getElementById("mars-modal");
     const closeBtn = document.getElementById("close-modal");
 
+    const marsModalSeen = localStorage.getItem("marsModalSeen") === "true";
+
+    if (!marsModalSeen) {
+        modal.style.visibility = "visible";
+        modal.style.opacity = "1";
+    }
+
     closeBtn.onclick = () => {
-        modal.style.display = "none";
+        modal.style.opacity = "0";
+        modal.style.visibility = "hidden";
+        localStorage.setItem("marsModalSeen", "true");
     };
 
     // Optional: click outside to close
     window.onclick = (e) => {
         if (e.target === modal) {
-            modal.style.display = "none";
+            modal.style.opacity = "0";
+            modal.style.visibility = "hidden";
+            localStorage.setItem("marsModalSeen", "true");
         }
     };
 }
