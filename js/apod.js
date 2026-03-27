@@ -1,8 +1,11 @@
 // apod.js
 
-export async function loadAPODByDate(API_KEY) {
+export async function loadAPODByDate(API_KEY, passedDate = null) {
+    const rangeContainer = document.getElementById("apod-range");
+    if (rangeContainer) rangeContainer.innerHTML = "";
+
     const urlParams = new URLSearchParams(window.location.search);
-    const date = urlParams.get("date"); // get date from URL
+    const date = passedDate || urlParams.get("date");
 
     const container = document.getElementById("date-apod");
 
@@ -35,6 +38,9 @@ export async function loadAPODByDate(API_KEY) {
 
 // ---- Setup form submission ----
 export function setupAPODForm(API_KEY) {
+    const singleContainer = document.getElementById("date-apod");
+    if (singleContainer) singleContainer.innerHTML = "";
+    
     const form = document.getElementById("single-date-form");
     const dateInput = document.getElementById("apod-date");
 

@@ -3,9 +3,12 @@
 /* ============================= */
 
 #apod-single-date {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* stacks on small screens */
+    gap: 3rem;
+    padding: 2rem 4rem;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 /* ============================= */
@@ -26,7 +29,7 @@
 
 #date-apod {
     margin-top: 2rem;
-    max-width: 700px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -54,9 +57,12 @@
 /* ============================= */
 
 #apod-range-section {
-    text-align: center;
-    max-width: 1000px;
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* stacks on small screens */
+    gap: 3rem;
+    padding: 2rem 4rem;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 #apod-range-section p {
