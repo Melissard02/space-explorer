@@ -9,6 +9,16 @@ export async function loadAPODByDate(API_KEY, passedDate = null) {
 
     const container = document.getElementById("date-apod");
 
+    // If no date, hide container
+    if (!date) {
+        container.style.display = "none"; // hide
+        container.innerHTML = ""; // clear content
+        return;
+    }
+
+    // Show container now that we have a date
+    container.style.display = "block"; // or "flex" if you want flex behavior
+
     if (!date) {
         container.innerHTML = "<p>Please select a date to see the APOD.</p>";
         return;

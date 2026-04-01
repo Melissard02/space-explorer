@@ -37,14 +37,19 @@
 <main>
 
     <section id="apod-single-date">
-        <h2>Search APOD by Date</h2>
+        <h2 class="apod-h2">Search APOD by Date</h2>
 
-        <form id="single-date-form">
-            <input type="date" id="apod-date">
-            <button type="submit">Search</button>
-        </form>
         
+        <div class="apod-controls">
+            
+            <form id="single-date-form">
+                <label for="apod-date">Select APOD Date</label>
+                <input type="date" id="apod-date">
+                <button id="single-btn" type="submit">Search</button>
+            </form>
+        </div>
         <div id="date-apod"></div>
+        
     </section>
 
     <section id="apod-range-section">
@@ -59,7 +64,7 @@
             <label for="end-date">End Date</label>
             <input type="date" id="end-date">
 
-            <button id="range-btn">Load APODs</button>
+            <button id="range-btn">Search</button>
 
         </form>
 
