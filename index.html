@@ -4,15 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dive into space with real NASA data. View Astronomy Pictures of the Day, Mars rover images, track asteroids, and more through NASA APIs.">
     <title>Space Explorer | NASA API Project</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- External CSS -->
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="preload" 
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;500&display=swap" 
+        as="style" 
+        onload="this.onload=null;this.rel='stylesheet'">
+
+    <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Pre-Render CSS for perfomance boost -->
+    <style>
+        body {
+        margin: 0;
+        background-color: #0b0f1a;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        }
+
+        #hero {
+        height: 75vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+    </style>
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/index.css">
+
+
 </head>
 <body>
 
@@ -98,7 +126,14 @@
     </div>
 
     <div class="doodle-wrapper">
-        <img src="/images/planet.png" id="doodle" alt="Doodle of Saturn" class="clickable-doodle">
+        <img 
+            src="/images/planet.png" 
+            id="doodle" 
+            alt="Doodle of Saturn" 
+            class="clickable-doodle"
+            width="150"
+            height="150"
+        >
     </div>
     
 </main>
