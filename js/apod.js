@@ -1,5 +1,4 @@
 // apod.js
-
 export async function loadAPODByDate(API_KEY, passedDate = null) {
     const rangeContainer = document.getElementById("apod-range");
     if (rangeContainer) rangeContainer.innerHTML = "";
