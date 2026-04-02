@@ -31,8 +31,8 @@
 /* Hero Button */
 
 .hero-content button {
-    background: #00d4ff;
-    color: black;
+    background: #06002e;
+    color: white;
     font-weight: 600;
     padding: 0.6rem 1.5rem;
     border-radius: 6px;
@@ -104,7 +104,12 @@
 }
 
 #random-apod-section h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+
+#random-apod-section p {
+    text-align: left;
+    margin-bottom: 1rem;
 }
 
 /* Make cards feel interactive */
@@ -177,6 +182,75 @@
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+}
+
+/* ============================= */
+/* EXTERNAL MODAL (REAL POPUP) */
+/* ============================= */
+
+.external-modal {
+  display: none;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 2000;
+}
+
+/* show it */
+.external-modal.active {
+  display: block;
+}
+
+/* popup box */
+.external-modal .modal-content {
+  background: #111827;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 320px;
+  text-align: center;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+
+  transform: scale(0.9);
+  opacity: 0;
+  animation: popupIn 0.2s ease forwards;
+}
+
+.external-modal p {
+  margin-bottom: 1.5rem;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.modal-buttons button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+#confirm-yes {
+  background: #00d4ff;
+  color: black;
+}
+
+#confirm-no {
+  background: #1f2937;
+  color: white;
+}
+
+@keyframes popupIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* ============================= */

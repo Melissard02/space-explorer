@@ -62,9 +62,7 @@
     <div class="hero-content">
         <h1 id="apod-title">Loading...</h1>
         <p id="apod-description"></p>
-        <a href="https://apod.nasa.gov/apod/">
-            <button>View Picture of the Day</button>
-        </a>
+        <button id="view-apod" class="external-link">View Picture of the Day</button>
     </div>
 </header>
 
@@ -91,6 +89,7 @@
 
     <section id="random-apod-section">
         <h2>Random Space Discoveries</h2>
+        <p>Click to view full image in high quality</p>
         <div id="random-apod" class="card-container"></div>
     </section>
 
@@ -117,10 +116,10 @@
         </div>
     </section>
 
-    <!-- Modal -->
+    <!-- Modals -->
     <div id="apod-modal" class="modal">
         <span class="close">&times;</span>
-        <img class="modal-content" id="modal-img">
+        <img class="modal-content" id="modal-img" src="">
         <div id="modal-caption"></div>
     </div>
 
@@ -134,7 +133,18 @@
             height="150"
         >
     </div>
-    
+
+    <div id="external-modal" class="external-modal hidden">
+        <div class="modal-content">
+            <p>This link takes you to an external site. Continue?</p>
+            
+            <div class="modal-buttons">
+            <button id="confirm-yes">Yes</button>
+            <button id="confirm-no">No</button>
+            </div>
+        </div>
+    </div>
+            
 </main>
 
 <footer>

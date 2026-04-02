@@ -49,8 +49,34 @@ async function loadRandomAPOD(API_KEY, count = 8) {
     });
 }
 
-async function randomFacts() {
-    
+async function visitAPOD() {
+    const btn = document.getElementById("view-apod");
+    const modal = document.getElementById("external-modal");
+    const yesbtn = document.getElementById("confirm-yes");
+    const nobtn = document.getElementById("confirm-no");
+
+    const APOD_URL = "https://apod.nasa.gov/apod/";
+
+    btn.addEventListener("click", () => {
+        const hasAccepted = localStorage.getItem("externalAccepted");
+
+        if (hasAccepted === "true") {
+            window.open(APOD_URL,  "_blank");
+            return
+        }
+        modal.classList.add("active");
+    });
+
+
+    yesbtn.addEventListener("click", () => {
+        localStorage.setItem("externalAccepted", "true");
+        modal.classList.remove("active");
+        window.open(APOD_URL, "_blank");
+    });
+
+    nobtn.addEventListener("click", () => {
+        modal.classList.remove("active");
+    })
 }
 
 async function animateDoodle() {
@@ -74,6 +100,7 @@ function init() {
     loadRandomAPOD(API_KEY);
     setupDropdownMenu();
     animateDoodle();
+    visitAPOD();
 }
 
 window.onload = init;
