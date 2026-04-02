@@ -83,9 +83,8 @@ export async function loadMarsPhotos(API_KEY) {
         setupCarousel();
 
     } catch(error) {
-
-        console.error("Error loading Mars photos:", error);
-
+        // console.error("Error loading Mars photos:", error);
+        console.log("Mars API is currently down. Loading preselected images.")
         loadFakeMarsGallery();
         setupCarousel();
 
