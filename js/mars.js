@@ -98,27 +98,27 @@ export async function loadMarsPhotos(API_KEY) {
 const fakeMarsPhotos = [
 
     {
-        img: "https://mars.nasa.gov/mars2020-raw-images/pub/ods/surface/sol/01349/ids/edr/browse/zcam/ZL0_1349_0786710496_928EBY_N0633564ZCAM09416_1100LMJ03_1200.jpg",
+        img: "images/mars5.jpg",
         camera: "Mars Perseverance Sol 1349: Left Mastcam-Z Camera"
     },
     {
-        img: "https://mars.nasa.gov/mars2020-raw-images/pub/ods/surface/sol/01555/ids/edr/browse/shrlc/SIF_1555_0804985824_601EBY_N0770000SRLC00336_0000LMJ02_1200.jpg",
+        img: "images/mars3.jpg",
         camera: "Mars Perseverance Sol 1555: WATSON Camera"
     },
     {
-        img: "https://mars.nasa.gov/mars2020-raw-images/pub/ods/surface/sol/01080/ids/edr/browse/fcam/FLF_1080_0762818583_989ECM_N0501618FHAZ00215_04_090J01_1200.jpg",
+        img: "images/mars2.jpg",
         camera: "Mars Perseverance Sol 1080: Front Left Hazard Avoidance Camera"
     },
     {
-        img: "https://mars.nasa.gov/mars2020-raw-images/pub/ods/surface/sol/01785/ids/edr/browse/shrlc/SIF_1785_0825408112_437EBY_N0860510SRLC00741_0000LMJ02_1200.jpg",
+        img: "images/mars4.jpg",
         camera: "Mars Perseverance Sol 1785: WATSON Camera"
     },
     {
-        img: "https://mars.nasa.gov/mars2020-raw-images/pub/ods/surface/sol/00495/ids/edr/browse/fcam/FLF_0495_0710900226_737ECM_N0261004FHAZ02008_10_095J01_1200.jpg",
+        img: "images/mars1.jpg",
         camera: "Mars Perseverance Sol 495: Front Left Hazard Avoidance Camera"
     },
     {
-        img: "https://mars.nasa.gov/mars2020-raw-images/pub/ods/surface/sol/01681/ids/edr/browse/zcam/ZR0_1681_0816168612_957EBY_N0802956ZCAM04271_1100LMJ01_1200.jpg",
+        img: "images/mars6.jpg",
         camera: "Mars Perseverance Sol 1681: Right Mastcam-Z Camera"
     }
 
