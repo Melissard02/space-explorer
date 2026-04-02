@@ -98,27 +98,27 @@ export async function loadMarsPhotos(API_KEY) {
 const fakeMarsPhotos = [
 
     {
-        img: "images/mars5.jpg",
+        img: "images/mars5.webp",
         camera: "Mars Perseverance Sol 1349: Left Mastcam-Z Camera"
     },
     {
-        img: "images/mars3.jpg",
+        img: "images/mars3.webp",
         camera: "Mars Perseverance Sol 1555: WATSON Camera"
     },
     {
-        img: "images/mars2.jpg",
+        img: "images/mars2.webp",
         camera: "Mars Perseverance Sol 1080: Front Left Hazard Avoidance Camera"
     },
     {
-        img: "images/mars4.jpg",
+        img: "images/mars4.webp",
         camera: "Mars Perseverance Sol 1785: WATSON Camera"
     },
     {
-        img: "images/mars1.jpg",
+        img: "images/mars1.webp",
         camera: "Mars Perseverance Sol 495: Front Left Hazard Avoidance Camera"
     },
     {
-        img: "images/mars6.jpg",
+        img: "images/mars6.webp",
         camera: "Mars Perseverance Sol 1681: Right Mastcam-Z Camera"
     }
 
