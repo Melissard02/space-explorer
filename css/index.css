@@ -45,7 +45,7 @@
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0,212,255,0.4);
 }
-
+/* TODO: Set Max height so text doesn't get pushed off screen */
 #apod-title {
     min-height: 3rem;
 }
@@ -289,12 +289,33 @@
 /* ============================= */
 /* RESPONSIVE */
 /* ============================= */
-
+/* TODO: On mobile view have the hero be switched for the subpage */
 @media (max-width: 700px) {
 
+    /* 🔥 Make hero act like subpage */
+    #hero {
+        height: 200px;
+        background-image: url("../images/backuphero.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* Hide APOD hero content */
+    #hero-media,
+    .hero-content {
+        display: none !important;
+    }
+
+    /* Keep nav visible */
+    .top-bar {
+        position: relative;
+        z-index: 2;
+        padding-top: 1.5rem;
+    }
+
+    /* Your existing stuff */
     .hero-content {
         padding: 1rem;
-
         min-height: 220px;
         display: flex;
         flex-direction: column;
@@ -308,5 +329,4 @@
     .feature-card {
         width: 100%;
     }
-
 }

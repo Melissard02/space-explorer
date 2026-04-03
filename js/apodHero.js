@@ -3,6 +3,15 @@
 // Hero APOD
 // ==============================
 export async function loadAPOD(API_KEY) {
+    if (window.innerWidth <= 700) {
+        const heroMedia = document.getElementById("hero-media");
+
+        heroMedia.innerHTML = `
+            <img src="./images/backuphero.jpg" alt="Mobile fallback">
+        `;
+
+        return;
+    }
     try {
 
         const response = await fetch(
@@ -33,7 +42,8 @@ export async function loadAPOD(API_KEY) {
 
         }
 
-        document.getElementById("apod-title").textContent = data.title;
+        document.getElementById("apod-title").textContent = 
+            data.title.slice(0, 40) + "-";
         document.getElementById("apod-description").textContent =
             data.explanation.slice(0, 250) + "...";
 

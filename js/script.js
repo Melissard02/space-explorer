@@ -105,4 +105,17 @@ function init() {
     visitAPOD();
 }
 
-window.onload = init;
+window.addEventListener("load", () => {
+    init();
+
+    let isMobile = window.innerWidth <= 700;
+
+    window.addEventListener("resize", () => {
+        const nowMobile = window.innerWidth <= 700;
+
+        if (nowMobile !== isMobile) {
+            isMobile = nowMobile;
+            loadAPOD(API_KEY);
+        }
+    });
+});

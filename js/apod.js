@@ -1,4 +1,5 @@
 // apod.js
+// TODO: Add try/catch for data handling, specfically dates
 export async function loadAPODByDate(API_KEY, passedDate = null) {
     const rangeContainer = document.getElementById("apod-range");
     if (rangeContainer) rangeContainer.innerHTML = "";
@@ -68,7 +69,7 @@ export function setupAPODForm(API_KEY) {
         loadAPODByDate(API_KEY);
     });
 }
-
+// TODO: Try/catch for bad dates
 export async function loadAPODRange(API_KEY, start, end) {
 
     const container = document.getElementById("apod-range");
