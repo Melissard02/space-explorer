@@ -161,7 +161,7 @@ section {
 
 section h2 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.8rem;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
     margin-bottom: 1.5rem;
     text-align: left;
 }

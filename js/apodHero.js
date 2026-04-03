@@ -42,10 +42,8 @@ export async function loadAPOD(API_KEY) {
 
         }
 
-        document.getElementById("apod-title").textContent = 
-            data.title.slice(0, 40) + "-";
-        document.getElementById("apod-description").textContent =
-            data.explanation.slice(0, 250) + "...";
+        document.getElementById("apod-title").textContent = data.title;
+        document.getElementById("apod-description").textContent = data.explanation;
 
     } catch (error) {
         console.error("Error loading APOD", error);

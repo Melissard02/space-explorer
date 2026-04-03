@@ -7,25 +7,32 @@
     z-index: 2;
     position: relative;
     text-align: center;
-    max-width: 700px;
+    max-width: 90%;
     padding: 2rem;
+    overflow: hidden;
 
     min-height: 220px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 3rem;
 }
 
 .hero-content h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     margin-bottom: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .hero-content p {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
     margin-bottom: 1.5rem;
     line-height: 1.5;
     opacity: 0.9;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Hero Button */
@@ -45,13 +52,21 @@
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0,212,255,0.4);
 }
-/* TODO: Set Max height so text doesn't get pushed off screen */
+
 #apod-title {
-    min-height: 3rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 #apod-description {
-    min-height: 4.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 /* ============================= */
@@ -82,10 +97,11 @@
 .feature-card h3 {
     font-family: 'Orbitron', sans-serif;
     margin-bottom: 0.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 .feature-card p {
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
     opacity: 0.85;
 }
 
@@ -289,10 +305,8 @@
 /* ============================= */
 /* RESPONSIVE */
 /* ============================= */
-/* TODO: On mobile view have the hero be switched for the subpage */
 @media (max-width: 700px) {
 
-    /* 🔥 Make hero act like subpage */
     #hero {
         height: 200px;
         background-image: url("../images/backuphero.jpg");
@@ -320,10 +334,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-    }
-
-    .hero-content h1 {
-        font-size: 1.8rem;
     }
 
     .feature-card {
