@@ -13,7 +13,7 @@ async function loadRandomAPOD(API_KEY, count = 8) {
     const closeBtn = modal.querySelector(".close");
 
     const response = await fetch(
-        `https://api.nasa.gov/planetary/apod?count=${count}&api_key=${o3WCg5Zn4fqQiHNQoG3ThVOh4AYWrKQjO5oLzNTK}`
+        `https://api.nasa.gov/planetary/apod?count=${count}&api_key=${API_KEY}`
     );
 
     const data = await response.json();
