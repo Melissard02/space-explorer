@@ -3,7 +3,7 @@ import { loadAPOD } from "./apodHero.js";
 import { setupDropdownMenu } from "./dropdown.js";
 // import { API_KEY} from "./config.js";
 
-const API_KEY = "o3WCg5Zn4fqQiHNQoG3ThVOh4AYWrKQjO5oLzNTK"; // just declare it here
+const API_KEY = "o3WCg5Zn4fqQiHNQoG3ThVOh4AYWrKQjO5oLzNTK";
 
 async function loadRandomAPOD(API_KEY, count = 8) {
     const container = document.getElementById("random-apod");
