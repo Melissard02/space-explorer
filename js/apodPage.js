@@ -1,7 +1,7 @@
 // apodPage.js
 import { loadAPODByDate, loadAPODRange, setupAPODForm } from "./apod.js";
 import { setupDropdownMenu } from "./dropdown.js";
-import { API_KEY } from "./config.js";
+const API_KEY = "o3WCg5Zn4fqQiHNQoG3ThVOh4AYWrKQjO5oLzNTK";
 
 
 // --- Setup date range button ---
