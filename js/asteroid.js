@@ -67,7 +67,7 @@ export async function loadNearEarth(API_KEY) {
 
         } catch (error) {
             console.error("Error fetching Near-Earth Objects:", error);
-            formResults.innerHTML = "<p>Failed to load asteroids for that date range.</p>";
+            formResults.innerHTML = "<p>Failed to load asteroids for that date range. Please try again</p>";
         }
     });
 }
