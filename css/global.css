@@ -235,7 +235,7 @@ footer {
 /* ============================= */
 body.subpage #hero {
     height: 200px;
-    background-image: url("/images/backuphero.jpg");
+    background-image: url("./images/backuphero.jpg");
     background-size: cover;
     background-position: center;
 }
