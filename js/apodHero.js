@@ -42,7 +42,7 @@ export async function loadAPOD(API_KEY) {
         const heroMedia = document.getElementById("hero-media");
 
     heroMedia.innerHTML = `
-        <img src="images/backuphero.jpg" alt="Fallback space image">
+        <img src="./images/backuphero.jpg" alt="Fallback space image">
     `;
 
     document.getElementById("apod-title").textContent = "Space Explorer";
