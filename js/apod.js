@@ -1,5 +1,17 @@
 // apod.js
-// TODO: Add try/catch for data handling, specfically dates
+
+function isValidDate(dateString) {
+    // Check format YYYY-MM-DD
+    const regex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!regex.test(dateString)) return false;
+
+    const date = new Date(dateString);
+    const today = new Date();
+    const minDate = new Date("1995-06-16");
+
+    return date <= today && date >= minDate;
+}
+
 export async function loadAPODByDate(API_KEY, passedDate = null) {
     const rangeContainer = document.getElementById("apod-range");
     if (rangeContainer) rangeContainer.innerHTML = "";
@@ -9,41 +21,64 @@ export async function loadAPODByDate(API_KEY, passedDate = null) {
 
     const container = document.getElementById("date-apod");
 
-    // If no date, hide container
+    // If no date → hide
     if (!date) {
-        container.style.display = "none"; // hide
-        container.innerHTML = ""; // clear content
+        container.style.display = "none";
+        container.innerHTML = "";
         return;
     }
 
-    // Show container now that we have a date
-    container.style.display = "block"; // or "flex" if you want flex behavior
+    // Show container
+    container.style.display = "block";
 
-    if (!date) {
-        container.innerHTML = "<p>Please select a date to see the APOD.</p>";
+    // VALIDATION CHECK
+    if (!isValidDate(date)) {
+        container.innerHTML = `
+            <p style="color:red;">
+                Invalid date. Please enter a valid date between 1995-06-16 and today.
+            </p>
+        `;
         return;
     }
 
-    const response = await fetch(
-        `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${API_KEY}`
-    );
-    const data = await response.json();
+    try {
+        const response = await fetch(
+            `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${API_KEY}`
+        );
 
-    // Skip videos
-    if (data.media_type !== "image") {
-        container.innerHTML = "<p>This APOD is a video. Try another date!</p>";
-        return;
+        // Handle bad API response
+        if (!response.ok) {
+            throw new Error("API error");
+        }
+
+        const data = await response.json();
+
+        // Skip videos
+        if (data.media_type !== "image") {
+            container.innerHTML = `
+                <p>This APOD is a video. Try another date!</p>
+            `;
+            return;
+        }
+
+        container.innerHTML = `
+            <img class="apod-image" src="${data.url}" alt="${data.title}">
+            <h3>${data.title}</h3>
+            <p>${data.explanation}</p>
+        `;
+
+        // Prefill input
+        const dateInput = document.getElementById("apod-date");
+        if (dateInput) dateInput.value = date;
+
+    } catch (error) {
+        container.innerHTML = `
+            <p style="color:red;">
+                Something went wrong. Please try again.
+            </p>
+        `;
+        console.error(error);
     }
-
-    container.innerHTML = `
-        <img class="apod-image" src="${data.url}" alt="${data.title}">
-        <h3>${data.title}</h3>
-        <p>${data.explanation}</p>
-    `;
-
-    // Prefill the form
-    const dateInput = document.getElementById("apod-date");
-    if (dateInput) dateInput.value = date;
 }
 
 // ---- Setup form submission ----
@@ -69,32 +104,60 @@ export function setupAPODForm(API_KEY) {
         loadAPODByDate(API_KEY);
     });
 }
-// TODO: Try/catch for bad dates
+
 export async function loadAPODRange(API_KEY, start, end) {
-
     const container = document.getElementById("apod-range");
+    container.innerHTML = ""; // always clear first
 
-    const response = await fetch(
-        `https://api.nasa.gov/planetary/apod?start_date=${start}&end_date=${end}&api_key=${API_KEY}`
-    );
+    // Validation
+    if (!start || !end) {
+        container.innerHTML = `<p style="color:red;">Please provide both start and end dates!</p>`;
+        return;
+    }
 
-    const data = await response.json();
+    if (!isValidDate(start) || !isValidDate(end)) {
+        container.innerHTML = `<p style="color:red;">Invalid dates. Enter dates between 1995-06-16 and today in YYYY-MM-DD format.</p>`;
+        return;
+    }
 
-    container.innerHTML = "";
+    const startDateObj = new Date(start);
+    const endDateObj = new Date(end);
 
-    data.forEach(item => {
+    if (endDateObj < startDateObj) {
+        container.innerHTML = `<p style="color:red;">End date must be after start date!</p>`;
+        return;
+    }
 
-        if(item.media_type !== "image") return;
+    try {
+        const response = await fetch(
+            `https://api.nasa.gov/planetary/apod?start_date=${start}&end_date=${end}&api_key=${API_KEY}`
+        );
 
-        const card = document.createElement("div");
-        card.className = "card";
+        if (!response.ok) throw new Error("API error");
 
-        card.innerHTML = `
-            <img src="${item.url}" alt="APOD from ${item.date}">
-            <h4>${item.date}</h4>
-        `;
+        const data = await response.json();
 
-        container.appendChild(card);
+        if (!data || data.length === 0) {
+            container.innerHTML = `<p>No APOD images found for these dates.</p>`;
+            return;
+        }
 
-    });
+        data.forEach(item => {
+            if (item.media_type !== "image") return;
+
+            const card = document.createElement("div");
+            card.className = "card";
+
+            card.innerHTML = `
+                <img src="${item.url}" alt="APOD from ${item.date}">
+                <h4>${item.date}</h4>
+            `;
+
+            container.appendChild(card);
+        });
+
+    } catch (error) {
+        container.innerHTML = `<p style="color:red;">Something went wrong. Please try again.</p>`;
+        console.error(error);
+    }
 }
