@@ -147,7 +147,6 @@
 /* ============================= */
 
 #space-facts {
-    padding: 3rem 2rem;
     text-align: center;
 }
 
@@ -277,13 +276,12 @@
     justify-content: center;
     align-items: center;
     background: transparent;
-    margin-bottom: 100px;
     z-index: 1000;
 }
 
 .clickable-doodle {
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: 300px;
   cursor: pointer;
   transition: transform 0.2s;
 }
