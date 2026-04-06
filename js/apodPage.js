@@ -46,3 +46,5 @@ function loadFromURL() {
 loadFromURL();
 
 window.addEventListener("popstate", loadFromURL);
+
+console.log("APOD Initialized");

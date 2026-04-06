@@ -8,5 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setupModal();
     setupDropdownMenu();
     loadMarsPhotos(API_KEY);
+    console.log("Mars Initialized");
 })
 

@@ -95,9 +95,8 @@ async function animateDoodle() {
 });
 }
 
-
-
 function init() {
+    console.log("Script.js initalized");
     loadAPOD(API_KEY);
     loadRandomAPOD(API_KEY);
     setupDropdownMenu();
